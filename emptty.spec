@@ -11,6 +11,8 @@ License:	MIT
 Group:		Window Manager/Display Manager
 BuildRequires:	make
 BuildRequires:	pkgconfig(pam)
+BuildRequires:  go
+BuildRequires:  git
 
 %description
 %summary.
