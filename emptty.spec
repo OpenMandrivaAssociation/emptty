@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:		emptty
-Version:	0.14.0
+Version:	0.15.0
 Release:	1
 Source0:	https://github.com/tvrzna/emptty/archive/v%{version}/%{name}-%{version}.tar.gz
 Source1:    %{name}-%{version}-vendor.tar.gz
@@ -31,14 +31,14 @@ make install-config DESTDIR=%{buildroot}
 make install-systemd DESTDIR=%{buildroot}
 sed -i 's/system-login/system-auth/g' %{buildroot}%{_sysconfdir}/pam.d/emptty
 
-%post
-%systemd_post %{name}.service
+#%post
+#%systemd_post %{name}.service
 
-%preun
-%systemd_postun %{name}.service
+#%preun
+#%systemd_postun %{name}.service
 
-%postun
-%systemd_preun %{name}.service
+#%postun
+#%systemd_preun %{name}.service
 
 %files
 %{_bindir}/%{name}
